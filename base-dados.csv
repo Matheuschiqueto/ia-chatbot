@@ -1,0 +1,41 @@
+Ordem,Nome +  Nº,Para que finalidade pretende usar o moedor?,Quantos quilos de carne precisa moer?,Qual é a voltagem disponível no local?,Qual é o tipo de carne e variedade?,Prefere modelo mais fácil de limpar?,Ruído é um fator importante?,O espaço físico é limitado?,Qual é a faixa de orçamento?,Prefere moedor manual ou elétrico?,Deseja função reversa?,Deseja acessórios para embutidos?,Produto escolhido
+1,Paulo1,Uso doméstico,De 2 até 10 kg,220 V,Carne com ossos leves (frango...),Sim,Sim,Sim,"Abaixo de R$ 500,00",Elétrico,Não,Não,Moedor de carne caf 114 total inox
+2,Paulo2,Uso profissional,Acima de 10 kg,Trifásico (uso industrial),Carne com ossos leves (frango...),Sim,Sim,Sim,"Acima de R$ 1000,00",Elétrico,Não,Sim,Moedor de carne caf 106 total inox
+3,Paulo3,Ambos,Acima de 10 kg,220 V,Carne com ossos leves (frango...),Sim,Sim,Sim,"De R$ 500,00 até R$ 1000,00",Elétrico,Não,Sim,Moedor de carne caf 8 inox
+4,Paulo4,Uso doméstico,Abaixo de 2 kg,110 V,Carne com ossos leves (frango...),Sim,Sim,Sim,"Abaixo de R$ 500,00",Manual,Não,Sim,Moedor de carne caf gourmet
+5,Paulo5,Uso profissional,Acima de 10 kg,Trifásico (uso industrial),Carne com ossos leves (frango...),Sim,Sim,Sim,"Acima de R$ 1000,00",Elétrico,Não,Não,Moedor de carne caf 82 express
+6,Mell1,Uso doméstico,Abaixo de 2 kg,220 V,Também aves e peixes,Sim,Sim,Sim,"Abaixo de R$ 500,00",Elétrico,Não,Não,Moedor de carne caf 106 total inox
+7,Mell2,Uso profissional,Acima de 10 kg,Trifásico (uso industrial),Misturas e embutidos,Sim,Não,Não,"Acima de R$ 1000,00",Elétrico,Sim,Não,Moedor de carne caf gourmet
+8,Mell3,Ambos,De 2 até 10 kg,110 V,Apenas bovina/suína,Não,Sim,Não,"De R$ 500,00 até R$ 1000,00",Manual,Não,Sim,Moedor de carne caf 114 total inox
+9,Mell4,Uso doméstico,De 2 até 10 kg,110 V,Também aves e peixes,Não,Sim,Sim,"De R$ 500,00 até R$ 1000,00",Manual,Sim,Sim,Moedor de carne caf 98 dsm 3cv inox
+10,Mell5,Uso profissional,Abaixo de 2 kg,220 V,Misturas e embutidos,Sim,Não,Não,"Acima de R$ 1000,00",Elétrico,Não,Não,Moedor de carne caf 82 express
+11,Débora1,Uso doméstico,De 2 até 10 kg,110 V,Também aves e peixes,Sim,Sim,Sim,"De R$ 500,00 até R$ 1000,00",Elétrico,Não,Não,Moedor de carne caf gourmet
+12,Débora2,Ambos,Acima de 10 kg,220 V,Carne com ossos leves (frango...),Sim,Sim,Não,"Acima de R$ 1000,00",Elétrico,Sim,Sim,Moedor de carne caf 98 dsm 3cv inox
+13,Débora3,Uso profissional,Acima de 10 kg,Trifásico (uso industrial),Carne com ossos leves (frango...),Não,Não,Não,"Acima de R$ 1000,00",Manual,Sim,Sim,Moedor de carne caf 8 inox
+14,Débora4,Uso doméstico,Abaixo de 2 kg,110 V,Misturas e embutidos,Sim,Sim,Sim,"Abaixo de R$ 500,00",Elétrico,Não,Sim,Moedor de carne caf gourmet
+15,Débora5,Uso profissional,Acima de 10 kg,Trifásico (uso industrial),Apenas bovina/suína,Não,Não,Não,"Acima de R$ 1000,00",Manual,Sim,Sim,Moedor de carne caf 106 total inox
+16,Sara 1,Uso doméstico,De 2 até 10 kg,110 V,Apenas bovina/suína,Sim,Sim,Sim,"De R$ 500,00 até R$ 1000,00",Manual,Não,Sim,Moedor de carne caf gourmet
+17,Sara 2,Uso profissional,Acima de 10 kg,220 V,Apenas bovina/suína,Sim,Sim,Sim,"De R$ 500,00 até R$ 1000,00",Elétrico,Não,Sim,Moedor de carne caf 98 dsm 3cv inox
+18,Sara 3,Uso profissional,Acima de 10 kg,Trifásico (uso industrial),Carne com ossos leves (frango...),Não,Não,Não,"Acima de R$ 1000,00",Elétrico,Não,Sim,Moedor de carne caf 114 total inox
+19,Sara 4,Uso profissional,Acima de 10 kg,Trifásico (uso industrial),Carne com ossos leves (frango...),Não,Não,Não,"Acima de R$ 1000,00",Elétrico,Sim,Não,Moedor de carne caf 82 express
+20,Sara 5,Ambos,Acima de 10 kg,220 V,Apenas bovina/suína,Não,Não,Sim,"Acima de R$ 1000,00",Manual,Não,Não,Moedor de carne caf 8 inox
+21,Flávio,Uso profissional,Acima de 10 kg,Trifásico (uso industrial),Apenas bovina/suína,Sim,Sim,Não,"Acima de R$ 1000,00",Elétrico,Não,Sim,Moedor de carne caf 82 express
+22,Brenda,Uso doméstico,Abaixo de 2 kg,110 V,Também aves e peixes,Não,Sim,Sim,"Abaixo de R$ 500,00",Elétrico,Não,Não,Moedor de carne caf gourmet
+23,Joice,Uso doméstico,De 2 até 10 kg,220 V,Misturas e embutidos,Sim,Sim,Sim,"De R$ 500,00 até R$ 1000,00",Manual,Sim,Sim,Moedor de carne caf 98 dsm 3cv inox
+24,Renato,Ambos,De 2 até 10 kg,110 V,Também aves e peixes,Sim,Não,Não,"Acima de R$ 1000,00",Manual,Sim,Sim,Moedor de carne caf 106 total inox
+25,Rodrigo,Uso profissional,De 2 até 10 kg,220 V,Apenas bovina/suína,Não,Não,Não,"Acima de R$ 1000,00",Elétrico,Sim,Não,Moedor de carne caf 114 total inox
+26,Anecy1,Uso doméstico,De 2 até 10 kg,110 V,Misturas e embutidos,Sim,Sim,Sim,"Abaixo de R$ 500,00",Manual,Não,Sim,Moedor de carne caf 98 dsm 3cv inox
+27,Anecy2,Uso profissional,De 2 até 10 kg,220 V,Também aves e peixes,Sim,Sim,Não,"De R$ 500,00 até R$ 1000,00",Elétrico,Sim,Sim,Moedor de carne caf 8 inox
+28,Anecy3,Uso profissional,Acima de 10 kg,220 V,Também aves e peixes,Sim,Sim,Não,"Acima de R$ 1000,00",Elétrico,Sim,Sim,Moedor de carne caf 82 express
+29,Anecy4,Ambos,Acima de 10 kg,Trifásico (uso industrial),Carne com ossos leves (frango...),Sim,Sim,Não,"Acima de R$ 1000,00",Elétrico,Sim,Sim,Moedor de carne caf gourmet
+30,Anecy5,Ambos,Abaixo de 2 kg,110 V,Apenas bovina/suína,Não,Não,Sim,"De R$ 500,00 até R$ 1000,00",Manual,Não,Não,Moedor de carne caf 106 total inox
+31,Luana,Ambos,De 2 até 10 kg,110 V,Apenas bovina/suína,Sim,Não,Não,"Acima de R$ 1000,00",Elétrico,Não,Não,Moedor de carne caf 8 inox
+32,Gabriel,Uso profissional,Acima de 10 kg,Trifásico (uso industrial),Carne com ossos leves (frango...),Não,Não,Não,"Acima de R$ 1000,00",Elétrico,Não,Não,Moedor de carne caf 106 total inox
+33,Guilherme,Uso doméstico,Abaixo de 2 kg,110 V,Apenas bovina/suína,Sim,Sim,Sim,"Acima de R$ 1000,00",Elétrico,Não,Não,Moedor de carne caf gourmet
+34,Joana,Uso doméstico,De 2 até 10 kg,110 V,Apenas bovina/suína,Sim,Não,Não,"Acima de R$ 1000,00",Elétrico,Não,Não,Moedor de carne caf 8 inox
+35,Rafael,Uso profissional,Acima de 10 kg,Trifásico (uso industrial),Também aves e peixes,Sim,Não,Não,"Acima de R$ 1000,00",Elétrico,Não,Não,Moedor de carne caf 114 total inox
+36,Felippe 01,Uso doméstico,Abaixo de 2 kg,220 V,Apenas bovina/suína,Sim,Sim,Sim,"Abaixo de R$ 500,00",Elétrico,Não,Não,Moedor de carne caf 114 total inox
+37,Felippe 02,Uso doméstico,De 2 até 10 kg,110 V,Carne com ossos leves (frango...),Sim,Sim,Não,"De R$ 500,00 até R$ 1000,00",Elétrico,Não,Não,Moedor de carne caf 82 express
+38,Felippe 03,Uso doméstico,Acima de 10 kg,220 V,Misturas e embutidos,Sim,Sim,Não,"Acima de R$ 1000,00",Elétrico,Não,Não,Moedor de carne caf 98 dsm 3cv inox
+39,Felippe 04,Uso doméstico,De 2 até 10 kg,Trifásico (uso industrial),Apenas bovina/suína,Sim,Sim,Não,"Acima de R$ 1000,00",Elétrico,Não,Não,Moedor de carne caf 106 total inox
+40,Felippe 05,Ambos,Acima de 10 kg,110 V,Também aves e peixes,Sim,Não,Sim,"Acima de R$ 1000,00",Elétrico,Sim,Não,Moedor de carne caf 8 inox
