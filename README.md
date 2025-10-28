@@ -1,10 +1,10 @@
-# 🤖 IA Chatbot - Análise de Dados
+# 📊 Análise de Dados - Chatbot Consultor Virtual
 
-Projeto para análise de dados de perguntas e respostas do chatbot usando Python e Pandas.
+Projeto para análise de dados históricos de perguntas e respostas do chatbot consultor virtual de moedores de carne, usando Python e Pandas.
 
 ## 📋 Descrição
 
-Este projeto visa analisar as respostas dos usuários e as máquinas sugeridas pelo chatbot consultor virtual. Inicialmente, o foco é importar e visualizar os dados históricos sem treinar modelos de IA.
+Este projeto tem como objetivo analisar as interações dos usuários com o chatbot consultor virtual, focando nas respostas fornecidas e nos produtos recomendados. A análise permite entender padrões de comportamento, preferências dos usuários e eficácia das recomendações do chatbot.
 
 ## 🚀 Tecnologias
 
@@ -16,13 +16,24 @@ Este projeto visa analisar as respostas dos usuários e as máquinas sugeridas p
 
 ```
 ia-chatbot/
-├── base-dados.csv          # Arquivo com dados históricos de perguntas/respostas
-├── importar_dados.py       # Script principal para importar e analisar dados
-├── requirements.txt        # Dependências do projeto
-└── README.md              # Este arquivo
+├── base-dados.csv          # Dados históricos de perguntas/respostas dos usuários
+├── importar_dados.py       # Script principal de análise de dados
+├── requirements.txt        # Dependências Python do projeto
+├── README.md              # Documentação do projeto
+├── .gitignore             # Arquivos ignorados pelo Git
+└── venv/                  # Ambiente virtual Python (não versionado)
 ```
 
 ## 🔧 Instalação
+
+### Clonar o Repositório
+
+```bash
+git clone https://github.com/Matheuschiqueto/ia-chatbot.git
+cd ia-chatbot
+```
+
+### Configurar o Ambiente
 
 1. Certifique-se de ter Python 3.x instalado
 
@@ -39,6 +50,11 @@ venv\Scripts\activate  # Windows
 pip install -r requirements.txt
 ```
 
+### Requisitos
+
+- Python 3.7 ou superior
+- pip (gerenciador de pacotes Python)
+
 ## 📊 Como Usar
 
 ### Importar e Visualizar os Dados
@@ -49,15 +65,17 @@ Execute o script principal:
 python importar_dados.py
 ```
 
-O script irá:
-- ✅ Importar o arquivo `base-dados.csv`
-- 📊 Exibir informações gerais sobre os dados
-- 🔍 Mostrar os primeiros registros
-- 📈 Calcular estatísticas descritivas
-- 📦 Analisar a distribuição de produtos escolhidos
-- 📝 Mostrar detalhes das respostas de todas as perguntas
-- 🔗 Analisar correlações entre respostas e produtos escolhidos
-- 📊 Fornecer um resumo geral dos dados
+### O que o Script Faz
+
+O script `importar_dados.py` realiza uma análise completa dos dados históricos:
+
+1. ✅ **Importação dos Dados**: Carrega o arquivo `base-dados.csv` com encoding UTF-8
+2. 📊 **Informações Básicas**: Exibe total de registros, colunas e estrutura do DataFrame
+3. 🔍 **Primeiros Registros**: Mostra uma prévia dos dados (primeiros 5 registros)
+4. 📦 **Análise de Produtos**: Calcula distribuição de produtos recomendados com percentuais
+5. 📝 **Análise de Perguntas**: Detalha a distribuição de respostas para cada pergunta
+6. 🔗 **Correlações**: Analisa relações entre respostas específicas e produtos escolhidos
+7. 📊 **Resumo Geral**: Fornece estatísticas consolidadas dos dados
 
 ## 📝 Formato dos Dados
 
@@ -85,12 +103,13 @@ O arquivo `base-dados.csv` contém dados reais do chatbot de consultoria de moed
 - ✅ Resumo geral dos dados
 - ✅ Suporte para colunas com nomes personalizados
 
-### 🔜 Próximos Passos
-- Visualizações gráficas (matplotlib, seaborn)
-- Pré-processamento de dados para treinamento de modelo
-- Implementação de modelo de classificação/recomendação (Decision Tree, Random Forest, etc.)
-- API para fazer predições baseadas em respostas
-- Interface web para visualizar análises
+### 🔜 Melhorias Futuras
+- 📈 Visualizações gráficas com matplotlib e seaborn
+- 📊 Dashboard interativo para análise dos dados
+- 📁 Suporte para múltiplos formatos de arquivo (Excel, JSON)
+- 🔍 Análise de tendências temporais
+- 📧 Exportação de relatórios em PDF/HTML
+- 🔄 Integração com API do chatbot para análise em tempo real
 
 ## 📊 Análises Disponíveis
 
@@ -128,9 +147,10 @@ O script `importar_dados.py` fornece:
 ## 🐛 Solução de Problemas
 
 ### Erro: "Arquivo não encontrado"
-**Solução**: Certifique-se de estar na pasta do projeto:
+**Solução**: Certifique-se de estar na pasta do projeto e que o arquivo `base-dados.csv` existe:
 ```bash
-cd /home/matheus/Documentos/ia-chatbot
+cd ia-chatbot
+ls base-dados.csv
 ```
 
 ### Erro: "pandas não encontrado"
@@ -150,12 +170,26 @@ O script gera uma análise completa mostrando:
 - Correlações entre as 3 primeiras perguntas e os produtos recomendados
 - Resumo estatístico geral
 
-## 📞 Desenvolvido por
+## 📞 Contribuindo
 
-Projeto desenvolvido para análise de dados do chatbot consultor virtual de moedores de carne.
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests.
+
+## 📄 Licença
+
+Este projeto é de código aberto e está disponível sob a licença MIT.
+
+## 👤 Autor
+
+**Matheus Chiqueto**
+
+- GitHub: [@Matheuschiqueto](https://github.com/Matheuschiqueto)
+
+## 🔗 Projeto Relacionado
+
+Este projeto faz parte do ecossistema do [Chatbot Consultor Virtual](https://github.com/Matheuschiqueto/consultor-virtual), fornecendo ferramentas de análise para os dados históricos do chatbot.
 
 ---
 **Versão**: 1.1.0  
 **Status**: 🟢 Funcional  
-**Última atualização**: Análise adaptada para dados reais de moedores de carne
+**Última atualização**: README atualizado para publicação no GitHub
 
