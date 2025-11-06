@@ -9,7 +9,10 @@ import pandas as pd
 import os
 from sklearn import tree
 from sklearn.preprocessing import LabelEncoder
+from sklearn.model_selection import train_test_split, cross_val_score, cross_val_predict, StratifiedKFold
+from sklearn.metrics import confusion_matrix, accuracy_score, classification_report
 import matplotlib.pyplot as plt
+import numpy as np
 
 def importar_dados():
     """
@@ -140,44 +143,152 @@ def treinar_e_mostrar_arvore(x, y):
         
         le_x = {}
         
-        # Converte cada coluna categórica de X
+        # Converte cada coluna categórica de X, preservando valores do replace
         for col in x_encoded.columns:
-            if x_encoded[col].dtype == 'object' or x_encoded[col].apply(lambda x: isinstance(x, str)).any():
-                # Se ainda tiver strings, usa LabelEncoder para os valores restantes
+            # Verifica se ainda há strings após o replace
+            tem_strings = x_encoded[col].apply(lambda x: isinstance(x, str)).any()
+            
+            if tem_strings:
+                # Se ainda tiver strings, aplica LabelEncoder apenas nos valores string
+                # Mantém os valores numéricos do replace intactos
                 le = LabelEncoder()
-                x_encoded[col] = le.fit_transform(x_encoded[col].astype(str))
+                
+                # Identifica quais são strings e quais são números
+                mask_strings = x_encoded[col].apply(lambda x: isinstance(x, str))
+                
+                # Aplica LabelEncoder apenas nas strings
+                valores_strings = x_encoded[col][mask_strings].astype(str)
+                valores_encoded = le.fit_transform(valores_strings)
+                
+                # Cria uma cópia da coluna
+                col_encoded = x_encoded[col].copy()
+                
+                # Substitui apenas os valores string pelos valores codificados
+                col_encoded[mask_strings] = valores_encoded
+                
+                # Converte valores numéricos do replace para int (se necessário)
+                mask_numericos = ~mask_strings
+                if mask_numericos.any():
+                    col_encoded[mask_numericos] = pd.to_numeric(col_encoded[mask_numericos], errors='coerce').astype(int)
+                
+                x_encoded[col] = col_encoded
                 le_x[col] = le
-                print(f"✓ Coluna '{col}' convertida para numérico")
+                
+                # Conta quantos foram convertidos pelo replace vs LabelEncoder
+                num_replace = mask_numericos.sum() if mask_numericos.any() else 0
+                num_labelencoder = mask_strings.sum()
+                print(f"✓ Coluna '{col}': {num_replace} valores do replace + {num_labelencoder} valores do LabelEncoder")
             elif not pd.api.types.is_numeric_dtype(x_encoded[col]):
-                # Garante que seja numérico
+                # Se não tem strings mas não é numérico, força conversão
                 x_encoded[col] = pd.to_numeric(x_encoded[col], errors='coerce')
                 print(f"✓ Coluna '{col}' convertida para numérico (após replace)")
+            else:
+                # Já é numérico após replace
+                x_encoded[col] = x_encoded[col].astype(int)
+                print(f"✓ Coluna '{col}' já numérica após replace ({x_encoded[col].nunique()} valores únicos)")
         
-        # Converte Y para numérico
+        # Garante que todas as colunas de X sejam numéricas
+        for col in x_encoded.columns:
+            x_encoded[col] = pd.to_numeric(x_encoded[col], errors='coerce').astype(int)
+        
+        # Converte Y para numérico, preservando valores do replace
         y_series = pd.Series(y) if not isinstance(y, pd.Series) else y
         y_df = pd.DataFrame({'target': y_series})
         y_encoded = aplicar_replace(y_df)['target']
         
-        # Se ainda tiver strings em Y, usa LabelEncoder
-        if y_encoded.dtype == 'object' or y_encoded.apply(lambda x: isinstance(x, str)).any():
+        # Verifica se ainda há strings após o replace
+        tem_strings_y = y_encoded.apply(lambda x: isinstance(x, str)).any()
+        
+        if tem_strings_y:
+            # Se ainda tiver strings, aplica LabelEncoder em TODOS os valores
+            # (produtos não estão no mapeamento do replace)
             le_y = LabelEncoder()
             y_encoded = le_y.fit_transform(y_encoded.astype(str))
-            print(f"✓ Target convertido para numérico")
+            # Converte para numpy array para garantir compatibilidade
+            y_encoded = np.array(y_encoded, dtype=int)
+            print(f"✓ Target convertido para numérico (LabelEncoder - {len(np.unique(y_encoded))} classes)")
         else:
             # Cria LabelEncoder para manter compatibilidade com visualização
             le_y = LabelEncoder()
-            y_encoded = y_encoded.astype(int)
+            y_encoded = pd.to_numeric(y_encoded, errors='coerce').astype(int)
+            # Converte para numpy array
+            y_encoded = np.array(y_encoded, dtype=int)
             # Ajusta o LabelEncoder com os valores únicos de Y original
             le_y.fit(y.astype(str))
-            print(f"✓ Target convertido para numérico (após replace)")
+            print(f"✓ Target convertido para numérico (após replace - {len(np.unique(y_encoded))} classes)")
         
-        # Treina o modelo
+        # Validação cruzada usando TODAS as amostras
         print("\n" + "=" * 100)
-        print("🌳 TREINANDO ÁRVORE DE DECISÃO")
+        print("📊 VALIDAÇÃO CRUZADA (USANDO TODAS AS AMOSTRAS)")
+        print("=" * 100)
+        
+        # Usa k-fold estratificado (k=5) para usar todas as amostras
+        # Cada amostra será usada para treino e teste em diferentes iterações
+        cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
+        clf_cv = tree.DecisionTreeClassifier()
+        
+        # Calcula acurácia média na validação cruzada
+        cv_scores = cross_val_score(clf_cv, x_encoded, y_encoded, cv=cv, scoring='accuracy')
+        print(f"✓ Validação cruzada (5-fold):")
+        print(f"  - Acurácia média: {cv_scores.mean()*100:.2f}%")
+        print(f"  - Desvio padrão: {cv_scores.std()*100:.2f}%")
+        print(f"  - Acurácia por fold: {[f'{s*100:.1f}%' for s in cv_scores]}")
+        
+        # Predições da validação cruzada (cada amostra prevista quando estava no conjunto de teste)
+        y_pred_cv = cross_val_predict(clf_cv, x_encoded, y_encoded, cv=cv)
+        
+        # Calcula acurácia geral
+        accuracy_cv = accuracy_score(y_encoded, y_pred_cv)
+        print(f"\n📊 Acurácia geral (todas as amostras): {accuracy_cv*100:.2f}%")
+        
+        # Gera matriz de confusão usando todas as amostras
+        print("\n" + "=" * 100)
+        print("📊 MATRIZ DE CONFUSÃO (VALIDAÇÃO CRUZADA)")
+        print("=" * 100)
+        cm = confusion_matrix(y_encoded, y_pred_cv)
+        print("\nMatriz de Confusão (usando todas as 40 amostras):")
+        print(cm)
+        
+        # Treina o modelo final com TODAS as amostras
+        print("\n" + "=" * 100)
+        print("🌳 TREINANDO MODELO FINAL COM TODAS AS AMOSTRAS")
         print("=" * 100)
         clf = tree.DecisionTreeClassifier()
         clf = clf.fit(x_encoded, y_encoded)
-        print("✅ Modelo treinado com sucesso!")
+        print(f"✅ Modelo final treinado com {len(x_encoded)} amostras!")
+        
+        # Visualiza matriz de confusão
+        plt.figure(figsize=(12, 10))
+        im = plt.imshow(cm, interpolation='nearest', cmap='Blues')
+        plt.colorbar(im, label='Quantidade')
+        plt.title('Matriz de Confusão - Validação Cruzada (40 amostras)', fontsize=16, pad=20)
+        plt.ylabel('Valor Real', fontsize=12)
+        plt.xlabel('Valor Previsto', fontsize=12)
+        
+        # Adiciona os valores na matriz
+        thresh = cm.max() / 2.
+        for i in range(cm.shape[0]):
+            for j in range(cm.shape[1]):
+                plt.text(j, i, format(cm[i, j], 'd'),
+                        horizontalalignment="center",
+                        color="white" if cm[i, j] > thresh else "black",
+                        fontsize=10)
+        
+        # Define os labels
+        tick_marks = np.arange(len(le_y.classes_))
+        plt.xticks(tick_marks, le_y.classes_, rotation=45, ha='right')
+        plt.yticks(tick_marks, le_y.classes_)
+        plt.tight_layout()
+        plt.savefig('matriz_confusao.png', dpi=300, bbox_inches='tight', facecolor='white')
+        print("✓ Matriz de confusão salva como 'matriz_confusao.png'")
+        plt.close()
+        
+        # Relatório de classificação
+        print("\n" + "=" * 100)
+        print("📋 RELATÓRIO DE CLASSIFICAÇÃO")
+        print("=" * 100)
+        print("\nRelatório detalhado (Validação Cruzada - todas as amostras):")
+        print(classification_report(y_encoded, y_pred_cv, target_names=le_y.classes_))
         
         # Visualiza a árvore
         print("\n" + "=" * 100)
@@ -191,11 +302,13 @@ def treinar_e_mostrar_arvore(x, y):
         print("✓ Árvore salva como 'arvore_decisao.png'")
         plt.close()  # Fecha a figura para economizar memória
         
-        return clf
+        return clf, le_y
         
     except Exception as e:
         print(f"❌ Erro ao treinar modelo: {str(e)}")
-        return None
+        import traceback
+        traceback.print_exc()
+        return None, None
 
 if __name__ == "__main__":
     # Importa os dados
@@ -203,7 +316,7 @@ if __name__ == "__main__":
     
     # Treina e mostra a árvore de decisão se os dados foram importados com sucesso
     if x is not None and y is not None:
-        clf = treinar_e_mostrar_arvore(x, y)
+        clf, le_y = treinar_e_mostrar_arvore(x, y)
     
     print("\n" + "=" * 100)
     print("✅ IMPORTAÇÃO E TREINAMENTO CONCLUÍDOS!")
