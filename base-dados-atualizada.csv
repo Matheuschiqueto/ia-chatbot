@@ -1,0 +1,41 @@
+Perguntas,Para qual finalidade pretende usar o moedor?,Quantos quilos precisa moer por minuto?,Qual é a voltagem que pretende utilizar?,O que irá moer?,Prefere modelo mais fácil de limpar?,Ruído é um fator importante?,O espaço físico é limitado?,Qual é a faixa de orçamento?,Deseja função de remoagem?,Potência desejada,Produto escolhido
+P1,Industrial,Acima de 10Kg,Trifásico,"Carne, Frango",Não,Não,Não,"Acima de R$ 15,000,00",Sim,"Até 7,5kW",Moedor de carne CAF 114 Total Inox
+P2,Industrial,Até 9Kg,Trifásico,"Carne, Frango",Sim,Não,Não,"Acima de R$ 15,000,00",Sim,"Até 5,5kW",Moedor de carne CAF 106 Total Inox
+P3,Comercial,Até 1Kg,127V,"Carne, Frango",Sim,Sim,Não,"Até R$ 2,500,00",Sim,"Até 0,25kW",Moedor de carne CAF 8 inox
+P4,Doméstico,Até 1Kg,127V,"Carne, Frango",Não,Sim,Sim,"Até R$ 2,500,00",Não,"Até 0,25kW",Moedor de carne CAF Gourmet
+P5,Comercial,Acima de 10Kg,220V,"Carne, Frango",Não,Sim,Não,"Até R$ 15,000,00",Sim,"Até 2,2kW",Moedor de carne CAF 82 Express Total Inox
+M1,Industrial,Até 9Kg,Trifásico,"Carne, Frango",Sim,Não,Não,"Acima de R$ 15,000,00",Sim,"Até 5,5kW",Moedor de carne CAF 106 Total Inox
+M2,Doméstico,Até 1Kg,220V,"Diversos (Castanhas, Frutas, Graõs, Etc)",Não,Sim,Sim,"Até R$ 2,500,00",Não,"Até 0,25kW",Moedor de carne CAF Gourmet
+M3,Industrial,Acima de 10Kg,Trifásico,"Carne, Frango",Não,Não,Não,"Acima de R$ 15,000,00",Sim,"Até 7,5kW",Moedor de carne CAF 114 Total Inox
+M4,Comercial,Até 6.5Kg,Trifásico,"Carne, Frango",Sim,Sim,Não,"Até R$ 15,000,00",Sim,"Até 2,2kW",Moedor de carne CAF 98 DSM 3CV Inox
+M5,Comercial,Acima de 10Kg,220V,"Carne, Frango",Não,Sim,Não,"Até R$ 15,000,00",Sim,"Até 2,2kW",Moedor de carne CAF 82 Express Total Inox
+D1,Doméstico,Até 1Kg,127V,Embutidos,Não,Sim,Sim,"Até R$ 2,500,00",Não,"Até 0,25kW",Moedor de carne CAF Gourmet
+D2,Comercial,Até 6.5Kg,220V,"Carne, Frango",Sim,Sim,Não,"Até R$ 15,000,00",Sim,"Até 2,2kW",Moedor de carne CAF 98 DSM 3CV Inox
+D3,Comercial,Até 1Kg,220V,"Carne, Frango",Sim,Sim,Não,"Até R$ 2,500,00",Sim,"Até 0,25kW",Moedor de carne CAF 8 inox
+D4,Doméstico,Até 1Kg,127V,"Carne, Frango",Não,Sim,Sim,"Até R$ 2,500,00",Não,"Até 0,25kW",Moedor de carne CAF Gourmet
+D5,Industrial,Até 9Kg,Trifásico,"Carne, Frango",Sim,Não,Não,"Acima de R$ 15,000,00",Sim,"Até 5,5kW",Moedor de carne CAF 106 Total Inox
+S1,Doméstico,Até 1Kg,220V,"Carne, Frango",Não,Sim,Sim,"Até R$ 2,500,00",Não,"Até 0,25kW",Moedor de carne CAF Gourmet
+S2,Comercial,Até 6.5Kg,220V,"Carne, Frango",Sim,Sim,Não,"Até R$ 15,000,00",Sim,"Até 2,2kW",Moedor de carne CAF 98 DSM 3CV Inox
+S3,Industrial,Acima de 10Kg,Trifásico,"Carne, Frango",Não,Não,Não,"Acima de R$ 15,000,00",Sim,"Até 7,5kW",Moedor de carne CAF 114 Total Inox
+S4,Industrial,Acima de 10Kg,Trifásico,"Carne, Frango",Não,Sim,Não,"Até R$ 15,000,00",Sim,"Até 2,2kW",Moedor de carne CAF 82 Express Total Inox
+S5,Comercial,Até 1Kg,220V,"Carne, Frango",Sim,Sim,Não,"Até R$ 2,500,00",Sim,"Até 0,25kW",Moedor de carne CAF 8 inox
+Flávio,Industrial,Acima de 10Kg,220V,"Carne, Frango",Não,Sim,Não,"Até R$ 15,000,00",Sim,"Até 2,2kW",Moedor de carne CAF 82 Express Total Inox
+Brenda,Doméstico,Até 1Kg,127V,"Diversos (Castanhas, Frutas, Graõs, Etc)",Não,Sim,Sim,"Até R$ 2,500,00",Não,"Até 0,25kW",Moedor de carne CAF Gourmet
+Joice,Comercial,Até 6.5Kg,Trifásico,"Carne, Frango",Sim,Sim,Não,"Até R$ 15,000,00",Sim,"Até 2,2kW",Moedor de carne CAF 98 DSM 3CV Inox
+Renato,Industrial,Até 9Kg,Trifásico,"Carne, Frango",Sim,Não,Não,"Acima de R$ 15,000,00",Sim,"Até 5,5kW",Moedor de carne CAF 106 Total Inox
+Rodrigo,Industrial,Acima de 10Kg,Trifásico,"Carne, Frango",Não,Não,Não,"Acima de R$ 15,000,00",Sim,"Até 7,5kW",Moedor de carne CAF 114 Total Inox
+A1,Comercial,Até 6.5Kg,220V,"Carne, Frango",Sim,Sim,Não,"Até R$ 15,000,00",Sim,"Até 2,2kW",Moedor de carne CAF 98 DSM 3CV Inox
+A2,Comercial,Até 1Kg,127V,"Carne, Frango",Sim,Sim,Não,"Até R$ 2,500,00",Sim,"Até 0,25kW",Moedor de carne CAF 8 inox
+A3,Comercial,Acima de 10Kg,220V,"Carne, Frango",Não,Sim,Não,"Até R$ 15,000,00",Sim,"Até 2,2kW",Moedor de carne CAF 82 Express Total Inox
+A4,Doméstico,Até 1Kg,220V,"Carne, Frango",Não,Sim,Sim,"Até R$ 2,500,00",Não,"Até 0,25kW",Moedor de carne CAF Gourmet
+A5,Industrial,Até 9Kg,Trifásico,"Carne, Frango",Sim,Não,Não,"Acima de R$ 15,000,00",Sim,"Até 5,5kW",Moedor de carne CAF 106 Total Inox
+Luana,Comercial,Até 1Kg,127V,"Carne, Frango",Sim,Sim,Não,"Até R$ 2,500,00",Sim,"Até 0,25kW",Moedor de carne CAF 8 inox
+Gabriel,Industrial,Até 9Kg,Trifásico,"Carne, Frango",Sim,Não,Não,"Acima de R$ 15,000,00",Sim,"Até 5,5kW",Moedor de carne CAF 106 Total Inox
+Guilherme,Doméstico,Até 1Kg,127V,"Diversos (Castanhas, Frutas, Graõs, Etc)",Não,Sim,Sim,"Até R$ 2,500,00",Não,"Até 0,25kW",Moedor de carne CAF Gourmet
+Joana,Doméstico,Até 1Kg,220V,"Carne, Frango",Sim,Sim,Não,"Até R$ 2,500,00",Sim,"Até 0,25kW",Moedor de carne CAF 8 inox
+Rafael,Industrial,Acima de 10Kg,Trifásico,"Carne, Frango",Não,Não,Não,"Acima de R$ 15,000,00",Sim,"Até 7,5kW",Moedor de carne CAF 114 Total Inox
+F1,Industrial,Acima de 10Kg,Trifásico,"Carne, Frango",Não,Não,Não,"Acima de R$ 15,000,00",Sim,"Até 7,5kW",Moedor de carne CAF 114 Total Inox
+F2,Industrial,Acima de 10Kg,Trifásico,"Carne, Frango",Não,Sim,Não,"Até R$ 15,000,00",Sim,"Até 2,2kW",Moedor de carne CAF 82 Express Total Inox
+F3,Comercial,Até 6.5Kg,220V,"Carne, Frango",Sim,Sim,Não,"Até R$ 15,000,00",Sim,"Até 2,2kW",Moedor de carne CAF 98 DSM 3CV Inox
+F4,Industrial,Até 9Kg,Trifásico,"Carne, Frango",Sim,Não,Não,"Acima de R$ 15,000,00",Sim,"Até 5,5kW",Moedor de carne CAF 106 Total Inox
+F5,Comercial,Até 1Kg,220V,"Carne, Frango",Sim,Sim,Não,"Até R$ 2,500,00",Sim,"Até 0,25kW",Moedor de carne CAF 8 inox
